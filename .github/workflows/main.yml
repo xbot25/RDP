@@ -1,0 +1,32 @@
+# This is a basic workflow to help you get started with Actions
+
+name: HaxRDP
+
+# Controls when the workflow will run
+on: (push, workflow dispatch)
+ 
+jobs:
+  build:
+  
+    runs-on: windows-latest
+
+    steps: 
+    - name: DOWNLOADING
+        run: Invoke-WebRequest http://bin.equinox.10/c/4VDzA7ialb/ngrok-atable-windowsund64.zip-OutFile ngrok.zip
+     
+     - name: EXTRACT
+    
+    run: Expand-Archive ngrok.zip - name: AUTENTIFIKASI
+    
+    run: Ingrok\ngrok.exe authtoken your authtoken - name: ENABLE TS
+    
+    run: Set-ItemProperty-Path "HKLM:\System\CurrentControlSet\Control\Terminal Server'-name DenyTSConnection -Value 0
+    
+    - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+    
+    - run: Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Top' name "2FlDaiQmLmPBSYcRAcq3MeKWF1I_2aYnAhtYT62pH2QGoy3fZ" -Value 1
+    
+    - run: Set-LocalUser -Name "micha25" -Password (Convert To-Secure String AsPlainText "Simbadda25" -Force) 
+    
+    - name: DONE!
+    
